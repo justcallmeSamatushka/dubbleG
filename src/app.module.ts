@@ -4,6 +4,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { DB_ENTITIES } from './utils/db-entities';
 import { AuthModule } from './auth/auth.module';
 import { UserModule } from './user/user.module';
+import { MailModule } from './mail/mail.module';
 
 @Module({
   imports: [
@@ -22,7 +23,8 @@ import { UserModule } from './user/user.module';
       autoLoadEntities: true,
     }),
     AuthModule,
-    UserModule
+    UserModule,
+    MailModule
   ],
   controllers: [],
   providers: [],

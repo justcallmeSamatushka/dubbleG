@@ -1,8 +1,9 @@
 import { forwardRef, Module } from '@nestjs/common';
-import { JwtModule, JwtService } from '@nestjs/jwt';
+import { JwtModule } from '@nestjs/jwt';
 import { UserModule } from 'src/user/user.module';
 import { AuthController } from './auth.controller';
 import { AuthService } from './auth.service';
+import { MailModule } from "../mail/mail.module";
 
 @Module({
   imports: [
@@ -12,7 +13,8 @@ import { AuthService } from './auth.service';
       signOptions: {
         expiresIn: '24h'
       }
-    })
+    }),
+    MailModule
   ],
   controllers: [AuthController],
   providers: [AuthService],

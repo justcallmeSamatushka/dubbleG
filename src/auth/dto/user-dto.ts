@@ -1,7 +1,7 @@
 import { IsEmail, IsNotEmpty, IsString, Length } from 'class-validator';
 
 export class UserDto {
-  
+
   @IsNotEmpty({ message: 'Не должно быть пустым' })
   @IsString({ message: 'Должно быть строкой' })
   @IsEmail({}, { message: 'Некорректный email' })
@@ -13,4 +13,5 @@ export class UserDto {
   readonly password: string;
 
   readonly name?: string;
+  readonly role?: string;
 }
